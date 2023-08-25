@@ -1,0 +1,125 @@
+name: "FullPornNetwork"
+sceneByURL:
+  - action: scrapeXPath
+    url:
+      - abbiemaley.com
+      - analamateur.com
+      - analbbc.com
+      - analviolation.com
+      - analized.com
+      - baddaddypov.com
+      - badfamilypov.com
+      - badmommypov.com
+      - brokensluts.net
+      - cumdumpsterteens.com
+      - daughterjoi.com
+      - downtofuckdating.com
+      - dtfsluts.com
+      - downtofuckdating.com
+      - fullpornnetwork.com
+      - girlfaction.com
+      - hergape.com
+      - homemadeanalwhores.com
+      - jamesdeen.com
+      - lesbiananalsluts.com
+      - mommyjoi.com
+      - mugfucked.com
+      - onlyprince.com
+      - pervertgallery.com
+      - porkvendors.com
+      - povperverts.net
+      - publicsexdate.com
+      - realfuckingdating.com
+      - shefucksonthefirstdate.com
+      - slutinspection.com
+      - slutsbts.com
+      - slutspov.com
+      - sluttybbws.com
+      - teasingandpleasing.com
+      - teenageanalsluts.com
+      - teenagecorruption.com
+      - teenagetryouts.com
+      - twistedvisual.com
+      - wifespov.com
+      - yourmomdoesanal.com
+      - yourmomdoesporn.com
+    scraper: sceneScraper
+performerByURL:
+  - action: scrapeXPath
+    url:
+      - abbiemaley.com
+      - analamateur.com
+      - analbbc.com
+      - analviolation.com
+      - analized.com
+      - baddaddypov.com
+      - badfamilypov.com
+      - badmommypov.com
+      - brokensluts.net
+      - cumdumpsterteens.com
+      - daughterjoi.com
+      - downtofuckdating.com
+      - dtfsluts.com
+      - downtofuckdating.com
+      - fullpornnetwork.com
+      - girlfaction.com
+      - hergape.com
+      - homemadeanalwhores.com
+      - jamesdeen.com
+      - lesbiananalsluts.com
+      - mommyjoi.com
+      - mugfucked.com
+      - onlyprince.com
+      - pervertgallery.com
+      - porkvendors.com
+      - povperverts.net
+      - publicsexdate.com
+      - realfuckingdating.com
+      - shefucksonthefirstdate.com
+      - slutinspection.com
+      - slutsbts.com
+      - slutspov.com
+      - sluttybbws.com
+      - teasingandpleasing.com
+      - teenageanalsluts.com
+      - teenagecorruption.com
+      - teenagetryouts.com
+      - twistedvisual.com
+      - wifespov.com
+      - yourmomdoesanal.com
+      - yourmomdoesporn.com
+    scraper: performerScraper
+xPathScrapers:
+  sceneScraper:
+    scene:
+      Title: //h1[@class='title_bar trailer_title text-center text-3xl text-accent']
+      Details: //p[@class='description-text']
+      Date:
+        selector: //label[contains(text(),'Date Added')]//following::p[1]
+        postProcess:
+          - parseDate: 02/01/2006
+      Image: 
+        selector: //video[@id='my-player']//@poster
+      Tags:
+        Name:
+          selector: //ul[@class='flex flex-wrap gap-2 text-white']/li
+      Performers:
+        Name:
+          selector: //span[@class='update_models']/a
+  performerScraper:
+    performer:
+      Name:
+        selector: //h1[@class='model-name text-3xl text-accent pb-1']
+      Image:
+        selector: //div[@class='model-image model-img-wrapper calcImgHeight']/img/@src0_3x|//div[@class='model-image model-img-wrapper calcImgHeight']/img/@src0_2x|//div[@class='model-image model-img-wrapper calcImgHeight']/img/@src0_1x
+      Height:
+        selector: //div[h2[@class="text-accent uppercase"]/text()="height"]/text()
+        postProcess:
+          - replace:
+              - regex: .*(\d{3})\scm.+
+                with: $1
+      Measurements:
+        selector: //div[h2[@class="text-accent uppercase"]/text()="measurements"]/text()
+      Aliases:
+        selector: //div[h2[@class="text-accent uppercase"]/text()="alias"]/text()
+# Last Updated August 25, 2023
