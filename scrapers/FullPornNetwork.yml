@@ -105,7 +105,7 @@ xPathScrapers:
           selector: //ul[@class='flex flex-wrap gap-2 text-white']/li
       Performers:
         Name:
-          selector: //span[@class='update_models']/a
+          selector: //div[@class='video-info']//span[@class='update_models']/a
   performerScraper:
     performer:
       Name:
