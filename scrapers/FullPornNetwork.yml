@@ -95,9 +95,9 @@ xPathScrapers:
       Title: //h1[@class='title_bar trailer_title text-center text-3xl text-accent']
       Details: //p[@class='description-text']
       Date:
-        selector: //label[contains(text(),'Date Added')]//following::p[1]
+        selector: //label[contains(text(),"Date Added")]/following-sibling::p/text()
         postProcess:
-          - parseDate: 02/01/2006
+          - parseDate: 2006-01-02
       Image: 
         selector: //video[@id='my-player']//@poster
       Tags:
@@ -106,6 +106,52 @@ xPathScrapers:
       Performers:
         Name:
           selector: //div[@class='video-info']//span[@class='update_models']/a
+      Studio:
+        Name:
+          selector: //meta[@property="og:url"]/@content
+          postProcess:
+            - map:
+                https://AbbieMaley.com: Abbie Maley
+                https://AnalAmateur.com: Anal Amateur
+                https://AnalBBC.com: AnalBBC
+                https://ANALIZED.com: Analized
+                https://analviolation.com: Anal Violation
+                https://BadDaddyPOV.com: Bad Daddy POV
+                https://BadFamilyPov.com: Bad Family POV
+                https://BadMommyPOV.com: Bad Mommy POV
+                https://BrokenSluts.net: Broken Sluts
+                https://cumdumpsterteens.com: Cum Dumpster Teens
+                https://DaughterJOI.com: Daughter JOI
+                https://DownToFuckDating.com: Down To Fuck Dating
+                https://DTFsluts.com: DTF Sluts
+                https://FullPornNetwork.com: Full Porn Network
+                https://Girlfaction.com: Girlfaction
+                https://HerGape.com: Her Gape
+                https://HomemadeAnalWhores.com: Homemade Anal Whores
+                https://JamesDeen.com: James Deen
+                https://LesbianAnalSluts.com: Lesbian Anal Sluts
+                https://MommyJOI.com: Mommy JOI
+                https://MugFucked.com: Mug Fucked
+                https://OnlyPrince.com: Only Prince
+                https://PervertGallery.com: Pervert Gallery
+                https://PorkVendors.com: Pork Vendors
+                https://PornForce.com: Porn Force
+                https://POVPerverts.net: POV Perverts
+                https://publicsexdate.com: Public Sex Date
+                https://RealFuckingDating.com: Real Fucking Dating
+                https://SheFucksOnTheFirstDate.com: She Fucks On The First Date
+                https://SlutInspection.com: Slut Inspection
+                https://SlutsBTS.com: Sluts BTS
+                https://SlutsPOV.com: Sluts POV
+                https://SluttyBBWs.com: Slutty BBWs
+                https://TeasingAndPleasing.com: Teasing And Pleasing
+                https://TeenageAnalSluts.com: Teenage Anal Sluts
+                https://TeenageCorruption.com: Teenage Corruption
+                https://TeenageTryouts.com: Teenage Tryouts
+                https://TwistedVisual.com: Twisted Visual
+                https://WifesPOV.com: Wifes POV
+                https://yourmomdoesanal.com: Your Mom Does Anal
+                https://YourMomDoesPorn.com: Your Mom Does Porn
   performerScraper:
     performer:
       Name:
