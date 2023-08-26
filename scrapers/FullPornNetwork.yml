@@ -1,4 +1,4 @@
-name: "FullPornNetwork"
+name: "Full Porn Network"
 sceneByURL:
   - action: scrapeXPath
     url:
@@ -116,10 +116,13 @@ xPathScrapers:
         selector: //div[h2[@class="text-accent uppercase"]/text()="height"]/text()
         postProcess:
           - replace:
-              - regex: .*(\d{3})\scm.+
+              - regex: .*(\d{3})\s?cm.+
                 with: $1
+              - regex: .*(?:ft|feet|").*
+                with: # clear height if not in centimeters
       Measurements:
         selector: //div[h2[@class="text-accent uppercase"]/text()="measurements"]/text()
       Aliases:
         selector: //div[h2[@class="text-accent uppercase"]/text()="alias"]/text()
-# Last Updated August 25, 2023
+
+# Last Updated August 26, 2023
